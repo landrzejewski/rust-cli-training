@@ -64,3 +64,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `016-tui-layouts` | Layout, Constraint, Direction, Flex; responsive layouts; components |
 | `017-tui-async-events` | Keyboard and mouse, async event loop with tokio, background tasks |
 | `018-tui-themes-keymaps` | Themes, accessibility, vim/emacs keymaps, configurable bindings |
+| `019-progress-prompts` | Progress bars and spinners (indicatif), prompts (dialoguer, inquire), non-interactive mode |
