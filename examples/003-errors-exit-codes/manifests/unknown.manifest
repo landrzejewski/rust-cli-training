@@ -1,0 +1,2 @@
+service = payments
+replicas = 1

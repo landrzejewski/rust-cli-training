@@ -1,0 +1,4 @@
+# Deployment manifest: key = value, comments with '#'
+service = billing
+tag = 1.4.2
+replicas = 3

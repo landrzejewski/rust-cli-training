@@ -24,4 +24,6 @@ unwrap_used = "warn"
 # Dependency versions declared once; examples use `dep = { workspace = true }`.
 # Kept as the last section of this file.
 [workspace.dependencies]
+anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive"] }
+thiserror = "2.0.21"
