@@ -1,0 +1,1 @@
+ts=2026-10-01T10:00:04Z level=error service=gateway msg="upstream timeout" upstream=billing
