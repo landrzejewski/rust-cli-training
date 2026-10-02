@@ -1,0 +1,12 @@
+---
+source: examples/020-tui-testing/tests/tui.rs
+expression: terminal.backend()
+---
+"┌ Details ─────────────────────────────────────────────────┐"
+"│#101 Payment provider returns 503                         │"
+"│service:  billing                                         │"
+"│severity: Critical                                        │"
+"│status:   acknowledged                                    │"
+"│                                                          │"
+"└──────────────────────────────────────────────────────────┘"
+" Esc back  a acknowledge  q quit                            "

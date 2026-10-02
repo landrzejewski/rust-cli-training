@@ -1,0 +1,27 @@
+[package]
+name = "ex020-tui-testing"
+description = "platctl-incidents: testing TUIs (TestBackend, insta snapshots) and CLIs (assert_cmd, trycmd)"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "platctl-incidents"
+path = "src/main.rs"
+
+[dependencies]
+serde_json = { workspace = true }
+serde = { workspace = true }
+crossterm = { workspace = true }
+ratatui = { workspace = true }
+clap = { workspace = true }
+
+[dev-dependencies]
+trycmd = { workspace = true }
+predicates = { workspace = true }
+assert_cmd = { workspace = true }
+insta = { workspace = true }
+
+[lints]
+workspace = true

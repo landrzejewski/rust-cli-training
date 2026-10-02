@@ -1,0 +1,11 @@
+---
+source: examples/020-tui-testing/tests/tui.rs
+expression: terminal.backend()
+---
+"┌ Incidents ───────────────────────────────────────────────┐"
+"│  ! #101 billing        Payment provider returns 503      │"
+"│> ! #102 search         p95 latency above 1s              │"
+"│  ✔ #103 notifications  E-mail queue growing              │"
+"│                                                          │"
+"└──────────────────────────────────────────────────────────┘"
+" j/k move  Enter details  a acknowledge  q quit             "

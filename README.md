@@ -65,3 +65,5 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `017-tui-async-events` | Keyboard and mouse, async event loop with tokio, background tasks |
 | `018-tui-themes-keymaps` | Themes, accessibility, vim/emacs keymaps, configurable bindings |
 | `019-progress-prompts` | Progress bars and spinners (indicatif), prompts (dialoguer, inquire), non-interactive mode |
+| `020-tui-testing` | Testing: key scripts, TestBackend, insta snapshots, assert_cmd, trycmd |
+| **Module 4 – Distribution, extensibility, maintenance** | |
