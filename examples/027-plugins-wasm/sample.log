@@ -1,0 +1,5 @@
+2026-10-02T10:00:01Z INFO  api login ok user=ann@example.com
+2026-10-02T10:00:02Z INFO  lb GET /healthz 200
+2026-10-02T10:00:03Z WARN  billing retry token=sk_live_9f8e7d password=hunter2
+2026-10-02T10:00:04Z INFO  mailer sent to bob@corp.example.org
+2026-10-02T10:00:05Z INFO  lb GET /healthz 200
