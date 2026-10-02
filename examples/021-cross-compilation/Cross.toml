@@ -1,0 +1,12 @@
+# Configuration for `cross` (https://github.com/cross-rs/cross): `cross build --target <T>` runs
+# cargo inside a Docker image that contains the C toolchain for <T>.
+#   cargo install cross --locked
+#   cross build --release --target aarch64-unknown-linux-gnu
+
+[build.env]
+# Environment variables passed into the build container.
+passthrough = ["RUST_BACKTRACE"]
+
+[target.aarch64-unknown-linux-gnu]
+# Extra system packages for C dependencies (e.g. OpenSSL) – installed before the build.
+pre-build = ["dpkg --add-architecture $CROSS_DEB_ARCH && apt-get update && apt-get install -y libssl-dev:$CROSS_DEB_ARCH"]

@@ -1,0 +1,16 @@
+# Example `.cargo/config.toml` for cross-compiling with a system cross toolchain (no Docker, no zig).
+# Copy to <workspace>/.cargo/config.toml and install the toolchain, e.g. on Debian/Ubuntu:
+#   apt install gcc-aarch64-linux-gnu
+#   rustup target add aarch64-unknown-linux-gnu
+
+[target.aarch64-unknown-linux-gnu]
+# Rust compiles the code; the C cross toolchain LINKS it for the target.
+linker = "aarch64-linux-gnu-gcc"
+
+[target.x86_64-unknown-linux-musl]
+# Static binaries: musl links libc statically by default; `crt-static` makes it explicit.
+rustflags = ["-C", "target-feature=+crt-static"]
+
+[target.x86_64-pc-windows-msvc]
+# Static MSVC runtime – the .exe doesn't need the Visual C++ Redistributable.
+rustflags = ["-C", "target-feature=+crt-static"]

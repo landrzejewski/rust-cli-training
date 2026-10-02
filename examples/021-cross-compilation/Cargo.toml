@@ -1,0 +1,17 @@
+[package]
+name = "ex021-cross-compilation"
+description = "platctl-sysinfo: one codebase, many targets – cfg, build.rs, cross and cargo-zigbuild"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+# No dependencies on purpose: pure-Rust crates cross-compile trivially; C dependencies
+# (OpenSSL, libgit2, sqlite) need a C cross toolchain for every target.
+
+[[bin]]
+name = "platctl-sysinfo"
+path = "src/main.rs"
+
+[lints]
+workspace = true

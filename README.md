@@ -67,3 +67,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `019-progress-prompts` | Progress bars and spinners (indicatif), prompts (dialoguer, inquire), non-interactive mode |
 | `020-tui-testing` | Testing: key scripts, TestBackend, insta snapshots, assert_cmd, trycmd |
 | **Module 4 – Distribution, extensibility, maintenance** | |
+| `021-cross-compilation` | Cross compilation: targets, cfg, build.rs, cargo-zigbuild, cross, CI matrix |
