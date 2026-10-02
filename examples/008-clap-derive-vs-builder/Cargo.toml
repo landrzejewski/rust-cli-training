@@ -1,0 +1,16 @@
+[package]
+name = "ex008-clap-derive-vs-builder"
+description = "The same platctl CLI built with clap derive and clap builder, recommended project layout"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+# Library (src/lib.rs) + two thin binaries (src/bin/*.rs) sharing it.
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true }
+
+[lints]
+workspace = true
