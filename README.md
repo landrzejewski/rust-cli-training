@@ -53,3 +53,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `007-colors` | Colors with owo-colors and nu-ansi-term, NO_COLOR, CLICOLOR_FORCE, --color |
 | **Module 2 – clap and configuration in practice** | |
 | `008-clap-derive-vs-builder` | Project structure, clap derive vs builder, runtime subcommands |
+| `009-clap-subcommands-validation` | Subcommand enums, ValueEnum, ranges, groups, conflicts, custom value parsers |
