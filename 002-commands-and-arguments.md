@@ -29,7 +29,7 @@ Design rules:
 
 ```rust
 #[derive(Parser)]
-#[command(name = "platctl", version, about, propagate_version = true)]
+#[command(name = "platctl", version, propagate_version = true)]   // about = doc comment
 struct Cli {
     #[command(flatten)] global: GlobalArgs,       // reusable group of options
     #[command(subcommand)] command: Command,      // required subcommand
@@ -60,6 +60,7 @@ error before your code runs.
 
 Doc comments become help: `///` on the struct → about (first paragraph for `-h`, all for `--help`),
 `///` on fields → argument help. Use `//` for comments meant for developers.
+Careful: a bare `#[command(about)]` means "use `description` from Cargo.toml" and overrides the doc comment.
 
 ### What clap gives for free
 

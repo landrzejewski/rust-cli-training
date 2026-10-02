@@ -21,9 +21,10 @@ use clap::{Args, Parser, Subcommand};
 #[derive(Debug, Parser)]
 // `name` – program name in help/version (default: the package name).
 // `version` – adds `-V/--version` using CARGO_PKG_VERSION.
-// `about` – taken from the doc comment above.
+// No bare `about`: without a value it means "use the `description` from Cargo.toml" and
+// would override the doc comment above.
 // `propagate_version` – subcommands print the same version.
-#[command(name = "platctl", version, about, propagate_version = true)]
+#[command(name = "platctl", version, propagate_version = true)]
 pub struct Cli {
     /// Global options are defined once and accepted before AND after the subcommand.
     // `flatten` inlines the fields of another struct – keeps groups of options reusable.
