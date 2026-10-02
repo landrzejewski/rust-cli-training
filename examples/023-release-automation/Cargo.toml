@@ -1,0 +1,23 @@
+[package]
+name = "ex023-release-automation"
+description = "platctl-rel: release automation with cargo-dist, cargo-release and git-cliff"
+edition.workspace = true
+version = "0.3.0"
+license.workspace = true
+publish.workspace = true
+# Metadata used by release tooling (archives, installers, package managers).
+repository = "https://github.com/example-org/platctl"
+homepage = "https://github.com/example-org/platctl"
+authors = ["Platform Team <platform@example.com>"]
+
+[[bin]]
+name = "platctl-rel"
+path = "src/main.rs"
+
+# cargo-dist: this package is released even though the workspace sets `publish = false`
+# (publish = crates.io; dist = GitHub Releases artifacts).
+[package.metadata.dist]
+dist = true
+
+[lints]
+workspace = true

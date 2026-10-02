@@ -21,6 +21,13 @@ dbg_macro = "warn"
 todo = "warn"
 unwrap_used = "warn"
 
+# Profile used by cargo-dist for release artifacts (step 023): release + extra optimizations.
+[profile.dist]
+inherits = "release"
+lto = "thin"
+codegen-units = 1
+strip = "symbols"
+
 # Dependency versions declared once; examples use `dep = { workspace = true }`.
 # Kept as the last section of this file.
 [workspace.dependencies]

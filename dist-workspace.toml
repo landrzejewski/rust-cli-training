@@ -1,0 +1,34 @@
+# cargo-dist configuration (step 023) – https://opensource.axo.dev/cargo-dist/
+# Only packages with `[package.metadata.dist] dist = true` are released (ex023 here).
+#   dist plan                      what a release would build
+#   dist build --artifacts=local   build archives + checksums for this machine
+#   dist generate                  (re)generate .github/workflows/release.yml after config changes
+
+[workspace]
+members = ["cargo:."]
+
+[dist]
+# Version of dist used by CI – pinned for reproducible release pipelines.
+cargo-dist-version = "0.32.0"
+# CI provider: generates .github/workflows/release.yml (runs on pushed version tags).
+ci = "github"
+# Platforms to build (native runners in CI, see the generated workflow).
+targets = [
+  "aarch64-apple-darwin",
+  "x86_64-apple-darwin",
+  "aarch64-unknown-linux-gnu",
+  "x86_64-unknown-linux-gnu",
+  "x86_64-unknown-linux-musl",
+  "x86_64-pc-windows-msvc",
+]
+# Installers: `curl ... | sh`, `irm ... | iex`, Homebrew formula (step 024 covers package managers).
+installers = ["shell", "powershell", "homebrew"]
+# Homebrew tap repository the formula is pushed to.
+tap = "example-org/homebrew-tap"
+publish-jobs = ["homebrew"]
+# Where the shell/powershell installers put the binary.
+install-path = "CARGO_HOME"
+# Checksums next to every archive (sha256 by default; also a combined sha256.sum).
+checksum = "sha256"
+# Allow the hand-edited workflow comment block (none here) – keep generated files untouched.
+allow-dirty = []

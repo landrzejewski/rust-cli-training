@@ -1,0 +1,31 @@
+# git-cliff configuration (https://git-cliff.org): generates CHANGELOG.md from commit messages
+# that follow Conventional Commits (feat:, fix:, docs:, chore: ...).
+#   git cliff -c examples/023-release-automation/cliff.toml --unreleased
+#   git cliff -c ... --tag ex023-release-automation-v0.4.0 -o CHANGELOG.md
+
+[changelog]
+header = "# Changelog\n"
+body = """
+{% if version %}## [{{ version | trim_start_matches(pat="ex023-release-automation-v") }}] - {{ timestamp | date(format="%Y-%m-%d") }}{% else %}## [Unreleased]{% endif %}
+{% for group, commits in commits | group_by(attribute="group") %}
+### {{ group | upper_first }}
+{% for commit in commits %}- {{ commit.message | split(pat="\n") | first | trim }}{% if commit.breaking %} (**breaking**){% endif %}
+{% endfor %}{% endfor %}
+"""
+# Keep the template's own whitespace; git-cliff separates header and releases with a newline.
+trim = false
+
+[git]
+conventional_commits = true
+# Keep non-conventional commits out of the changelog.
+filter_unconventional = true
+commit_parsers = [
+  { message = "^feat", group = "Added" },
+  { message = "^fix", group = "Fixed" },
+  { message = "^perf", group = "Performance" },
+  { message = "^docs", group = "Documentation" },
+  { message = "^refactor", group = "Changed" },
+  { message = "^chore\\(release\\)", skip = true },
+  { message = "^chore|^ci|^test", skip = true },
+]
+tag_pattern = "ex023-release-automation-v[0-9].*"

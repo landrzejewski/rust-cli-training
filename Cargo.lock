@@ -1491,6 +1491,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "ex023-release-automation"
+version = "0.3.0"
+
+[[package]]
 name = "fancy-regex"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
