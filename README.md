@@ -56,3 +56,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `009-clap-subcommands-validation` | Subcommand enums, ValueEnum, ranges, groups, conflicts, custom value parsers |
 | `010-completions-man-pages` | Shell completions (static and dynamic), man pages, Markdown docs |
 | `011-config-rs-figment` | Layered configuration with config-rs and figment, dotenvy, serde |
+| `012-secrets-keyring` | Secrets: OS keychain (keyring), age-encrypted files, secrecy, safe input |

@@ -1,0 +1,22 @@
+[package]
+name = "ex012-secrets-keyring"
+description = "platctl-auth: secrets in the OS keychain (keyring), encrypted file fallback (age), secrecy"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "platctl-auth"
+path = "src/main.rs"
+
+[dependencies]
+secrecy = { workspace = true }
+rpassword = { workspace = true }
+age = { workspace = true }
+keyring = { workspace = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+
+[lints]
+workspace = true
