@@ -1,0 +1,13 @@
+[package]
+name = "platctl-plugin-redact"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true
+
+[lib]
+name = "redact"
+# cdylib + target wasm32-wasip2 = a WebAssembly COMPONENT (rustc runs wasm-component-ld).
+crate-type = ["cdylib"]
+
+[dependencies]
+wit-bindgen = { workspace = true }

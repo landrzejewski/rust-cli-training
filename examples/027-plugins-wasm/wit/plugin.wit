@@ -1,0 +1,33 @@
+// The contract between platctl-plug (host) and its plugins (guests).
+// WIT = WebAssembly Interface Types: language-neutral, versioned; strings, records, options,
+// results and enums cross the boundary without manual pointer/length juggling.
+package platctl:plugin@0.1.0;
+
+/// Functions the HOST provides to plugins – the only capabilities a plugin gets
+/// besides what the host grants through WASI.
+interface host {
+    enum level {
+        debug,
+        info,
+        warn,
+    }
+
+    log: func(level: level, message: string);
+}
+
+/// What every plugin component imports and exports.
+world plugin {
+    import host;
+
+    record metadata {
+        name: string,
+        version: string,
+        description: string,
+    }
+
+    /// Called once after loading.
+    export metadata: func() -> metadata;
+
+    /// Transform one log line: `some(line)` keeps (possibly modified), `none` drops it.
+    export process: func(line: string) -> option<string>;
+}

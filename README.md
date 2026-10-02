@@ -73,3 +73,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `024-package-managers` | Homebrew, Scoop, Winget, AUR, cargo install/binstall, Docker images |
 | `025-signing-sbom` | cosign signatures (key-based, keyless), cargo-auditable, cargo audit, CycloneDX SBOM, attestations |
 | `026-self-update-channels` | self_update (GitHub, manifest feed), stable/beta channels, throttled update notices, opt-out |
+| `027-plugins-wasm` | WebAssembly component plugins: WIT, wasmtime host, wit-bindgen guests, sandbox, fuel and memory limits |

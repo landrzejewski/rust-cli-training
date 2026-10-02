@@ -1,0 +1,13 @@
+[package]
+name = "platctl-plugin-rogue"
+edition.workspace = true
+version.workspace = true
+publish.workspace = true
+
+[lib]
+name = "rogue"
+# cdylib + target wasm32-wasip2 = a WebAssembly COMPONENT (rustc runs wasm-component-ld).
+crate-type = ["cdylib"]
+
+[dependencies]
+wit-bindgen = { workspace = true }

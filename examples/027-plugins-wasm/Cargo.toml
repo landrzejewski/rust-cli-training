@@ -1,0 +1,20 @@
+[package]
+name = "ex027-plugins-wasm"
+description = "platctl-plug: sandboxed WebAssembly component plugins with wasmtime and WIT"
+edition.workspace = true
+version = "0.1.0"
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "platctl-plug"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true }
+wasmtime = { workspace = true }
+wasmtime-wasi = { workspace = true }
+
+[lints]
+workspace = true

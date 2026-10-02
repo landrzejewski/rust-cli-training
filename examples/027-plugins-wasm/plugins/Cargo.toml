@@ -1,0 +1,20 @@
+# Plugins are a SEPARATE workspace: they're built for wasm32-wasip2, could live in other repos
+# and be written in other languages (anything that produces a component for plugin.wit).
+#   cargo build --manifest-path examples/027-plugins-wasm/plugins/Cargo.toml \
+#     --target wasm32-wasip2 --release
+[workspace]
+members = ["redact", "rogue"]
+resolver = "3"
+
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+publish = false
+
+[workspace.dependencies]
+wit-bindgen = "0.62.0"
+
+[profile.release]
+opt-level = "s"     # small .wasm files
+lto = true
+strip = true
