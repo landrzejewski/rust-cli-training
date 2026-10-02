@@ -1,0 +1,7 @@
+# Overrides for profile `prod` (--profile prod / PLATCTL_PROFILE=prod).
+[api]
+timeout_secs = 30
+
+[deploy]
+default_env = "prod"
+regions = ["eu-west-1", "us-east-1"]

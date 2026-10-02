@@ -1,0 +1,11 @@
+# Base configuration (all environments). Keys are snake_case: config-rs and figment map
+# PLATCTL_API__TIMEOUT_SECS to `api.timeout_secs`, so kebab-case keys could not be overridden.
+output = "table"
+
+[api]
+url = "https://platform.example.com/api"
+timeout_secs = 10
+
+[deploy]
+default_env = "dev"
+regions = ["eu-west-1"]
