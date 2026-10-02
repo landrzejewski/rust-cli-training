@@ -48,3 +48,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `002-commands-and-arguments` | Commands, subcommands, flags, positional and global arguments (clap derive) |
 | `003-errors-exit-codes` | Errors with thiserror and anyhow, reporting, exit codes |
 | `004-signals-cancellation` | Signals and cancellation: ctrlc, tokio::signal, CancellationToken |
+| `005-config-precedence` | Config files, environment variables, flags – precedence and provenance (12-factor) |

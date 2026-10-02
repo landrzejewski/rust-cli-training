@@ -1,0 +1,8 @@
+# Example platctl configuration. Copy to one of:
+#   ~/.config/platctl/config.toml   (user)
+#   ./.platctl.toml                 (project)
+# or pass explicitly: --config platctl.example.toml
+api-url = "https://platform.example.com/api"
+env = "staging"
+timeout-secs = 20
+output = "json"
