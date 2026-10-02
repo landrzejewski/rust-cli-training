@@ -1,0 +1,2 @@
+ts=2026-10-01T10:00:01Z level=info service=search msg="index updated"
+ts=2026-10-01T10:00:03Z level=warn service=search msg="slow query" ms=1840
