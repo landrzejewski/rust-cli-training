@@ -59,3 +59,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `012-secrets-keyring` | Secrets: OS keychain (keyring), age-encrypted files, secrecy, safe input |
 | `013-files-stdin-pipes` | Files, stdin and pipes: streaming, buffering, broken pipes, NUL separators |
 | **Module 3 – Interactive TUIs with ratatui and crossterm** | |
+| `014-tui-immediate-mode` | ratatui basics: terminal setup/restore, immediate-mode render loop |

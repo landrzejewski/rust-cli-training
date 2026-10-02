@@ -32,12 +32,14 @@ clap_complete = { version = "4.6.11", features = ["unstable-dynamic"] }
 clap_mangen = "0.3.3"
 comfy-table = "8.0.1"
 config = { version = "0.15.27", default-features = false, features = ["toml"] }
+crossterm = "0.29.0"
 ctrlc = { version = "3.5.2", features = ["termination"] }
 dotenvy = "0.15.7"
 figment = { version = "0.10.19", features = ["toml", "env"] }
 keyring = "4.2.0"
 nu-ansi-term = "0.50.3"
 owo-colors = "4.4.0"
+ratatui = "0.30.2"
 rpassword = "7.5.4"
 secrecy = "0.10.3"
 semver = "1.0.28"
