@@ -57,3 +57,5 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `010-completions-man-pages` | Shell completions (static and dynamic), man pages, Markdown docs |
 | `011-config-rs-figment` | Layered configuration with config-rs and figment, dotenvy, serde |
 | `012-secrets-keyring` | Secrets: OS keychain (keyring), age-encrypted files, secrecy, safe input |
+| `013-files-stdin-pipes` | Files, stdin and pipes: streaming, buffering, broken pipes, NUL separators |
+| **Module 3 – Interactive TUIs with ratatui and crossterm** | |

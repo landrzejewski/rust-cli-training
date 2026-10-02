@@ -1116,6 +1116,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "ex013-files-stdin-pipes"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "clap",
+ "serde_json",
+]
+
+[[package]]
 name = "fastrand"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
