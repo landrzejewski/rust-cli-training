@@ -1318,6 +1318,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "ex016-tui-layouts"
+version = "0.1.0"
+dependencies = [
+ "crossterm",
+ "ratatui",
+]
+
+[[package]]
 name = "fancy-regex"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
