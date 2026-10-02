@@ -18,7 +18,8 @@ use crate::{manifest::ManifestError, platform::PlatformError};
 
 /// Deploy a service described by a manifest file.
 #[derive(Debug, Parser)]
-#[command(name = "platctl-deploy", version, about)]
+// `about` comes from the doc comment above (a bare `about` would use the Cargo.toml description).
+#[command(name = "platctl-deploy", version)]
 struct Cli {
     /// Manifest file (key = value lines)
     manifest: PathBuf,
