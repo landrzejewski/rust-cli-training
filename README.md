@@ -49,3 +49,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `003-errors-exit-codes` | Errors with thiserror and anyhow, reporting, exit codes |
 | `004-signals-cancellation` | Signals and cancellation: ctrlc, tokio::signal, CancellationToken |
 | `005-config-precedence` | Config files, environment variables, flags – precedence and provenance (12-factor) |
+| `006-output-formats` | Predictable output: human, table, JSON, JSON Lines, YAML, TSV, TTY detection |
