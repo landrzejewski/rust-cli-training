@@ -26,6 +26,9 @@ unwrap_used = "warn"
 [workspace.dependencies]
 anyhow = "1.0.104"
 clap = { version = "4.6.7", features = ["derive", "string"] }
+clap-markdown = "0.1.5"
+clap_complete = { version = "4.6.11", features = ["unstable-dynamic"] }
+clap_mangen = "0.3.3"
 comfy-table = "8.0.1"
 ctrlc = { version = "3.5.2", features = ["termination"] }
 nu-ansi-term = "0.50.3"
