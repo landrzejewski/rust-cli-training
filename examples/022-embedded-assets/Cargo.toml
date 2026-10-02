@@ -1,0 +1,19 @@
+[package]
+name = "ex022-embedded-assets"
+description = "platctl-new: assets inside the binary – include_str!, include_bytes!, rust-embed, build.rs"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "platctl-new"
+path = "src/main.rs"
+
+[dependencies]
+rust-embed = { workspace = true }
+anyhow = { workspace = true }
+clap = { workspace = true }
+
+[lints]
+workspace = true

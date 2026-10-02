@@ -1,0 +1,8 @@
+# Default platctl configuration – embedded into the binary with include_str!.
+# Written to disk by `platctl-new init-config`.
+[api]
+url = "https://platform.example.com/api"
+timeout_secs = 10
+
+[deploy]
+default_env = "dev"
