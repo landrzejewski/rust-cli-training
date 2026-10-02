@@ -1,0 +1,19 @@
+[package]
+name = "ex007-colors"
+description = "platctl-status: colors with owo-colors and nu-ansi-term, NO_COLOR, --color"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "platctl-status"
+path = "src/main.rs"
+
+[dependencies]
+nu-ansi-term = { workspace = true }
+owo-colors = { workspace = true }
+clap = { workspace = true }
+
+[lints]
+workspace = true

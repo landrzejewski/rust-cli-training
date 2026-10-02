@@ -50,3 +50,5 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `004-signals-cancellation` | Signals and cancellation: ctrlc, tokio::signal, CancellationToken |
 | `005-config-precedence` | Config files, environment variables, flags – precedence and provenance (12-factor) |
 | `006-output-formats` | Predictable output: human, table, JSON, JSON Lines, YAML, TSV, TTY detection |
+| `007-colors` | Colors with owo-colors and nu-ansi-term, NO_COLOR, CLICOLOR_FORCE, --color |
+| **Module 2 – clap and configuration in practice** | |
