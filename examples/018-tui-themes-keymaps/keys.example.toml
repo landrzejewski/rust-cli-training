@@ -1,0 +1,9 @@
+# Custom key bindings for platctl-browse (--keys keys.example.toml).
+# Start from a preset and override single actions. Keys: "j", "ctrl-d", "alt-v", "pagedown",
+# "g g" (sequence: g then g). Each action takes a list of alternatives.
+preset = "vim"
+
+[bindings]
+quit = ["q", "ctrl-c"]
+search = ["/", "ctrl-f"]
+toggle-theme = ["t"]

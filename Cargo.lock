@@ -1338,6 +1338,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "ex018-tui-themes-keymaps"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "clap",
+ "crossterm",
+ "ratatui",
+ "serde",
+ "toml 1.1.6+spec-1.1.0",
+]
+
+[[package]]
 name = "fancy-regex"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"

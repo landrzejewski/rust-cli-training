@@ -63,3 +63,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `015-tui-widgets` | Widgets: Block, Tabs, List, Table, Paragraph, Chart, Gauge, Sparkline, BarChart |
 | `016-tui-layouts` | Layout, Constraint, Direction, Flex; responsive layouts; components |
 | `017-tui-async-events` | Keyboard and mouse, async event loop with tokio, background tasks |
+| `018-tui-themes-keymaps` | Themes, accessibility, vim/emacs keymaps, configurable bindings |
