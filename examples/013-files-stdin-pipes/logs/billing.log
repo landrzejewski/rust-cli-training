@@ -1,0 +1,3 @@
+ts=2026-10-01T10:00:00Z level=info service=billing msg="invoice created" id=1
+ts=2026-10-01T10:00:02Z level=error service=billing msg="payment declined" id=2
+ts=2026-10-01T10:00:05Z level=info service=billing msg="invoice created" id=3
