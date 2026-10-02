@@ -1,0 +1,25 @@
+# Cargo workspace: every example is an independent crate in `examples/` (one per training topic).
+# Run one with: cargo run -p ex001-cli-conventions -- --help
+[workspace]
+resolver = "3"
+members = ["examples/*"]
+
+# Shared package metadata – examples inherit it with `edition.workspace = true` etc.
+[workspace.package]
+edition = "2024"
+version = "0.1.0"
+license = "MIT"
+publish = false
+
+# Dependency versions declared once; examples use `dep = { workspace = true }`.
+[workspace.dependencies]
+
+# Lints shared by all examples (`[lints] workspace = true` in each crate).
+[workspace.lints.rust]
+unsafe_code = "forbid"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+dbg_macro = "warn"
+todo = "warn"
+unwrap_used = "warn"
