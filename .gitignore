@@ -3,6 +3,8 @@
 .vscode/
 .env
 *.log
+# ...except log fixtures that belong to the examples
+!examples/**/*.log
 .platctl-credentials/
 /dist
 *.key
