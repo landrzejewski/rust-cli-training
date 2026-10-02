@@ -44,3 +44,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | Branch | Topic |
 |--------|-------|
 | **Module 1 – Designing CLI tools** | |
+| `001-cli-conventions` | CLI ergonomics, POSIX/GNU/docopt conventions – a parser written by hand |

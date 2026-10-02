@@ -1,0 +1,15 @@
+[package]
+name = "ex001-cli-conventions"
+description = "platctl-logs: command-line conventions implemented by hand (no parsing library)"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+# The executable gets a realistic name instead of the package name.
+[[bin]]
+name = "platctl-logs"
+path = "src/main.rs"
+
+[lints]
+workspace = true
