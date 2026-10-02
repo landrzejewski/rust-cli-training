@@ -1,0 +1,22 @@
+[package]
+name = "ex017-tui-async-events"
+description = "platctl-live: async event loop with tokio, crossterm EventStream, mouse, ticks, background tasks"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "platctl-live"
+path = "src/main.rs"
+
+[dependencies]
+futures-util = { workspace = true }
+tokio-util = { workspace = true }
+tokio = { workspace = true }
+# `event-stream` – async `EventStream` (a futures `Stream` of terminal events).
+crossterm = { workspace = true, features = ["event-stream"] }
+ratatui = { workspace = true }
+
+[lints]
+workspace = true

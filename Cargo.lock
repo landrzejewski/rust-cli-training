@@ -809,6 +809,7 @@ dependencies = [
  "crossterm_winapi",
  "derive_more",
  "document-features",
+ "futures-core",
  "mio",
  "parking_lot",
  "rustix",
@@ -1323,6 +1324,17 @@ version = "0.1.0"
 dependencies = [
  "crossterm",
  "ratatui",
+]
+
+[[package]]
+name = "ex017-tui-async-events"
+version = "0.1.0"
+dependencies = [
+ "crossterm",
+ "futures-util",
+ "ratatui",
+ "tokio",
+ "tokio-util",
 ]
 
 [[package]]

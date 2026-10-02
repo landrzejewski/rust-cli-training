@@ -36,6 +36,7 @@ crossterm = "0.29.0"
 ctrlc = { version = "3.5.2", features = ["termination"] }
 dotenvy = "0.15.7"
 figment = { version = "0.10.19", features = ["toml", "env"] }
+futures-util = "0.3.34"
 keyring = "4.2.0"
 nu-ansi-term = "0.50.3"
 owo-colors = "4.4.0"

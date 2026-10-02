@@ -62,3 +62,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `014-tui-immediate-mode` | ratatui basics: terminal setup/restore, immediate-mode render loop |
 | `015-tui-widgets` | Widgets: Block, Tabs, List, Table, Paragraph, Chart, Gauge, Sparkline, BarChart |
 | `016-tui-layouts` | Layout, Constraint, Direction, Flex; responsive layouts; components |
+| `017-tui-async-events` | Keyboard and mouse, async event loop with tokio, background tasks |
