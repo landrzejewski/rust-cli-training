@@ -1,0 +1,14 @@
+# Winget "defaultLocale" manifest: descriptions shown in `winget search/show`.
+PackageIdentifier: ExampleOrg.PlatctlPkg
+PackageVersion: {{version}}
+PackageLocale: en-US
+Publisher: Example Org
+PackageName: platctl-pkg
+License: MIT
+ShortDescription: {{description}}
+PackageUrl: {{homepage}}
+Tags:
+  - cli
+  - devops
+ManifestType: defaultLocale
+ManifestVersion: 1.9.0

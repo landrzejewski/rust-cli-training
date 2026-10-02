@@ -1,0 +1,14 @@
+# Winget "installer" manifest: a zip with a portable exe (no installer program).
+PackageIdentifier: ExampleOrg.PlatctlPkg
+PackageVersion: 1.2.0
+InstallerType: zip
+NestedInstallerType: portable
+NestedInstallerFiles:
+  - RelativeFilePath: platctl-pkg-v1.2.0-x86_64-pc-windows-gnu\platctl-pkg.exe
+    PortableCommandAlias: platctl-pkg
+Installers:
+  - Architecture: x64
+    InstallerUrl: https://github.com/example-org/platctl-pkg/releases/download/v1.2.0/platctl-pkg-v1.2.0-x86_64-pc-windows-gnu.zip
+    InstallerSha256: 7CFEFD6B12C5B4C5D5D2FF9D0E827B6725A7700632ACFED6553B00A8E02681ED
+ManifestType: installer
+ManifestVersion: 1.9.0

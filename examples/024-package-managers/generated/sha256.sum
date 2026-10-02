@@ -1,0 +1,5 @@
+81d913fac5c5b344828d39f48fbefc410a35172f795b87915faf0002e4a7ed26  platctl-pkg-v1.2.0-aarch64-apple-darwin.tar.gz
+aacdd3c6668596190b3200d648302e3c43505424699e5883f5cafe9cd51aeafc  platctl-pkg-v1.2.0-aarch64-unknown-linux-musl.tar.gz
+61433adc479da06c3fb3fdfc7075193bf39eee7633b24ee36357372b8c12f99b  platctl-pkg-v1.2.0-x86_64-apple-darwin.tar.gz
+5b863e36fb1b5eb73e057fa0dc41d5dd850b0fb8ae3f72bd5504f6caeec09fde  platctl-pkg-v1.2.0-x86_64-unknown-linux-musl.tar.gz
+7cfefd6b12c5b4c5d5d2ff9d0e827b6725a7700632acfed6553b00a8e02681ed  platctl-pkg-v1.2.0-x86_64-pc-windows-gnu.zip

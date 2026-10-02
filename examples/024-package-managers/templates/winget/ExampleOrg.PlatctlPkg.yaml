@@ -1,0 +1,7 @@
+# Winget "version" manifest. Submitted as a PR to github.com/microsoft/winget-pkgs under
+# manifests/e/ExampleOrg/PlatctlPkg/{{version}}/ (or with `wingetcreate update`).
+PackageIdentifier: ExampleOrg.PlatctlPkg
+PackageVersion: {{version}}
+DefaultLocale: en-US
+ManifestType: version
+ManifestVersion: 1.9.0

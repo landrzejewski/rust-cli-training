@@ -1,0 +1,35 @@
+[package]
+name = "ex024-package-managers"
+description = "platctl-pkg: distribution via Homebrew, Scoop, Winget, AUR, cargo install/binstall and Docker"
+edition.workspace = true
+version = "1.2.0"
+license.workspace = true
+publish.workspace = true
+repository = "https://github.com/example-org/platctl-pkg"
+homepage = "https://github.com/example-org/platctl-pkg"
+
+[[bin]]
+name = "platctl-pkg"
+path = "src/main.rs"
+
+# Release helper: renders package manager manifests from templates + archive checksums.
+[[bin]]
+name = "render-manifests"
+path = "src/bin/render-manifests.rs"
+
+# cargo-binstall: where to download prebuilt binaries instead of compiling
+# (`cargo binstall platctl-pkg`). Placeholders are filled by binstall.
+[package.metadata.binstall]
+pkg-url = "{ repo }/releases/download/v{ version }/platctl-pkg-v{ version }-{ target }{ archive-suffix }"
+bin-dir = "platctl-pkg-v{ version }-{ target }/{ bin }{ binary-ext }"
+pkg-fmt = "tgz"
+
+[package.metadata.binstall.overrides.x86_64-pc-windows-gnu]
+pkg-fmt = "zip"
+
+[dependencies]
+sha2 = { workspace = true }
+anyhow = { workspace = true }
+
+[lints]
+workspace = true

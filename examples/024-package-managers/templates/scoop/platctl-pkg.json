@@ -1,0 +1,23 @@
+{
+    "version": "{{version}}",
+    "description": "{{description}}",
+    "homepage": "{{homepage}}",
+    "license": "MIT",
+    "architecture": {
+        "64bit": {
+            "url": "{{url:x86_64-pc-windows-gnu}}",
+            "hash": "{{sha256:x86_64-pc-windows-gnu}}",
+            "extract_dir": "platctl-pkg-v{{version}}-x86_64-pc-windows-gnu"
+        }
+    },
+    "bin": "platctl-pkg.exe",
+    "checkver": "github",
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "{{repository}}/releases/download/v$version/platctl-pkg-v$version-x86_64-pc-windows-gnu.zip",
+                "extract_dir": "platctl-pkg-v$version-x86_64-pc-windows-gnu"
+            }
+        }
+    }
+}

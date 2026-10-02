@@ -70,3 +70,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `021-cross-compilation` | Cross compilation: targets, cfg, build.rs, cargo-zigbuild, cross, CI matrix |
 | `022-embedded-assets` | Embedded resources: include_str!/include_bytes!, rust-embed, build.rs metadata |
 | `023-release-automation` | cargo-dist, cargo-release, git-cliff: archives, checksums, installers, changelog |
+| `024-package-managers` | Homebrew, Scoop, Winget, AUR, cargo install/binstall, Docker images |

@@ -1,0 +1,21 @@
+# Arch User Repository package for the prebuilt binary (`-bin` suffix by convention).
+# Publish: git clone ssh://aur@aur.archlinux.org/platctl-pkg-bin.git, copy this file,
+# run `makepkg --printsrcinfo > .SRCINFO`, commit and push. Users: `yay -S platctl-pkg-bin`.
+pkgname=platctl-pkg-bin
+pkgver=1.2.0
+pkgrel=1
+pkgdesc="Platform CLI distributed through package managers"
+arch=('x86_64' 'aarch64')
+url="https://github.com/example-org/platctl-pkg"
+license=('MIT')
+provides=('platctl-pkg')
+conflicts=('platctl-pkg')
+source_x86_64=("https://github.com/example-org/platctl-pkg/releases/download/v1.2.0/platctl-pkg-v1.2.0-x86_64-unknown-linux-musl.tar.gz")
+source_aarch64=("https://github.com/example-org/platctl-pkg/releases/download/v1.2.0/platctl-pkg-v1.2.0-aarch64-unknown-linux-musl.tar.gz")
+sha256sums_x86_64=('5b863e36fb1b5eb73e057fa0dc41d5dd850b0fb8ae3f72bd5504f6caeec09fde')
+sha256sums_aarch64=('aacdd3c6668596190b3200d648302e3c43505424699e5883f5cafe9cd51aeafc')
+
+package() {
+  install -Dm755 "platctl-pkg-v${pkgver}-${CARCH}-unknown-linux-musl/platctl-pkg" \
+    "${pkgdir}/usr/bin/platctl-pkg"
+}
