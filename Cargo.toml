@@ -2,7 +2,12 @@
 # Run one with: cargo run -p ex001-cli-conventions -- --help
 [workspace]
 resolver = "3"
-members = ["examples/*"]
+members = [
+    "examples/*",
+    # step 028: shared plugin ABI crate + native plugins (cdylib)
+    "examples/028-plugins-dylib/plugin-api",
+    "examples/028-plugins-dylib/plugins/*",
+]
 
 # Shared package metadata – examples inherit it with `edition.workspace = true` etc.
 [workspace.package]
@@ -50,6 +55,7 @@ indicatif = "0.18.6"
 inquire = "0.9.4"
 insta = "1.48.0"
 keyring = "4.2.0"
+libloading = "0.9.0"
 nu-ansi-term = "0.50.3"
 owo-colors = "4.4.0"
 predicates = "3.1.4"

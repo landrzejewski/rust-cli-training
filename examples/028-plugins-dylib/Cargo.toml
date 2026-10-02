@@ -1,0 +1,29 @@
+[package]
+name = "ex028-plugins-dylib"
+description = "platctl-ext: native plugins as dynamic libraries – libloading and a C ABI"
+edition.workspace = true
+version = "0.1.0"
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "platctl-ext"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true }
+libloading = { workspace = true }
+platctl-ext-api = { path = "plugin-api" }
+
+# `unsafe` is the point of this crate (FFI), so it cannot inherit the workspace `forbid`.
+# Same lints otherwise, plus: every unsafe block must carry a `// SAFETY:` justification.
+[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+dbg_macro = "warn"
+todo = "warn"
+unwrap_used = "warn"
+undocumented_unsafe_blocks = "warn"

@@ -1891,6 +1891,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "ex028-plugins-dylib"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "clap",
+ "libloading",
+ "platctl-ext-api",
+]
+
+[[package]]
 name = "fancy-regex"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3063,6 +3073,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "3eaf3ede3fee6db1a4c2ee091bf8a8b4dccdc6d17f656fb07896ee72867612f2"
 
 [[package]]
+name = "libloading"
+version = "0.9.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "754ca22de805bb5744484a5b151a9e1a8e837d5dc232c2d7d8c2e3492edc8b60"
+dependencies = [
+ "cfg-if",
+ "windows-link",
+]
+
+[[package]]
 name = "libm"
 version = "0.2.16"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3763,6 +3783,24 @@ name = "pkg-config"
 version = "0.3.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f6b464fbc74e149a392436b17d523f769e057cb6877f6a5c4618bc6f11800548"
+
+[[package]]
+name = "platctl-ext-api"
+version = "0.1.0"
+
+[[package]]
+name = "platctl-ext-crash"
+version = "0.1.0"
+dependencies = [
+ "platctl-ext-api",
+]
+
+[[package]]
+name = "platctl-ext-tag"
+version = "0.1.0"
+dependencies = [
+ "platctl-ext-api",
+]
 
 [[package]]
 name = "polling"

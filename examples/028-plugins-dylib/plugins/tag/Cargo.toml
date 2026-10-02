@@ -1,0 +1,27 @@
+[package]
+name = "platctl-ext-tag"
+edition.workspace = true
+version = "0.1.0"
+license.workspace = true
+publish.workspace = true
+
+[lib]
+name = "tag"
+# cdylib: a C-compatible shared library (libtag.dylib / libtag.so / tag.dll) with no Rust
+# metadata. ("dylib" would be a Rust-ABI library – usable only with the exact same compiler.)
+crate-type = ["cdylib"]
+
+[dependencies]
+platctl-ext-api = { path = "../../plugin-api" }
+
+# `unsafe` is the point of this crate (FFI), so it cannot inherit the workspace `forbid`.
+# Same lints otherwise, plus: every unsafe block must carry a `// SAFETY:` justification.
+[lints.rust]
+unsafe_op_in_unsafe_fn = "deny"
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+dbg_macro = "warn"
+todo = "warn"
+unwrap_used = "warn"
+undocumented_unsafe_blocks = "warn"
