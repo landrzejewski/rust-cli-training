@@ -1,0 +1,18 @@
+[package]
+name = "ex015-tui-widgets"
+description = "platctl-dash: ratatui widgets – Block, Tabs, List, Table, Paragraph, Chart, Gauge, Sparkline, BarChart"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "platctl-dash"
+path = "src/main.rs"
+
+[dependencies]
+crossterm = { workspace = true }
+ratatui = { workspace = true }
+
+[lints]
+workspace = true
