@@ -1,0 +1,19 @@
+[package]
+name = "ex004-signals-cancellation"
+description = "Signals and cancellation: ctrlc (sync) and tokio::signal + CancellationToken (async)"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+# Two binaries in one package: src/bin/<name>.rs are discovered automatically.
+#   cargo run -p ex004-signals-cancellation --bin platctl-sync
+#   cargo run -p ex004-signals-cancellation --bin platctl-watch
+
+[dependencies]
+tokio-util = { workspace = true }
+tokio = { workspace = true }
+ctrlc = { workspace = true }
+
+[lints]
+workspace = true

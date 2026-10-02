@@ -47,3 +47,4 @@ Dependencies are declared once in `[workspace.dependencies]`; examples refer to 
 | `001-cli-conventions` | CLI ergonomics, POSIX/GNU/docopt conventions – a parser written by hand |
 | `002-commands-and-arguments` | Commands, subcommands, flags, positional and global arguments (clap derive) |
 | `003-errors-exit-codes` | Errors with thiserror and anyhow, reporting, exit codes |
+| `004-signals-cancellation` | Signals and cancellation: ctrlc, tokio::signal, CancellationToken |
