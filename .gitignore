@@ -5,3 +5,5 @@
 *.log
 .platctl-credentials/
 /dist
+*.key
+*.cdx.json

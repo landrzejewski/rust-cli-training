@@ -1,0 +1,57 @@
+# GitHub Actions: keyless signing with Sigstore + SBOM + build provenance.
+# No long-lived keys: the job proves its identity with GitHub's OIDC token; Fulcio issues a
+# short-lived certificate bound to this workflow; the signature is logged in Rekor (transparency log).
+name: release-sign
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write        # upload release assets
+  id-token: write        # OIDC token for keyless signing / attestations
+  attestations: write    # GitHub artifact attestations
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: sigstore/cosign-installer@v3
+      - name: Install tools
+        run: cargo install cargo-auditable cargo-cyclonedx --locked
+      - name: Auditable build + archive
+        run: |
+          cargo auditable build --release --locked -p ex025-signing-sbom
+          tar -C target/release -czf platctl-verify.tar.gz platctl-verify
+          sha256sum platctl-verify.tar.gz > platctl-verify.tar.gz.sha256
+      - name: SBOM
+        # Writes <package>.cdx.json next to the package manifest.
+        run: |
+          cargo cyclonedx --manifest-path examples/025-signing-sbom/Cargo.toml --format json --spec-version 1.5
+          mv examples/025-signing-sbom/ex025-signing-sbom.cdx.json platctl-verify.cdx.json
+      - name: Keyless signature
+        run: |
+          cosign sign-blob --yes --bundle platctl-verify.tar.gz.bundle platctl-verify.tar.gz
+      # Alternative/complement: SLSA build provenance stored by GitHub,
+      # verified with `gh attestation verify platctl-verify.tar.gz -R example-org/platctl`.
+      - uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: platctl-verify.tar.gz
+      - uses: actions/attest-sbom@v2
+        with:
+          subject-path: platctl-verify.tar.gz
+          sbom-path: platctl-verify.cdx.json
+      - name: Upload release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release upload "$GITHUB_REF_NAME" platctl-verify.tar.gz platctl-verify.tar.gz.sha256 \
+            platctl-verify.tar.gz.bundle platctl-verify.cdx.json --clobber
+
+# Users verify a keyless signature by WHO signed it (this workflow on a tag) and the issuer:
+#   cosign verify-blob --bundle platctl-verify.tar.gz.bundle \
+#     --certificate-identity-regexp '^https://github.com/example-org/platctl/.github/workflows/release-sign.yml@refs/tags/v' \
+#     --certificate-oidc-issuer https://token.actions.githubusercontent.com \
+#     platctl-verify.tar.gz
